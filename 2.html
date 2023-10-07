@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5; /* Updated background color to a light gray */
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333; /* Header text color */
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff; /* Container background color */
+      border-radius: 8px; /* Border radius for the container */
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    }
+    p {
+      margin: 10px 0;
+      color: #444; /* Text color */
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc; /* Input border color */
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      color: #444; /* Result text color */
+    }
+  </style>
+</head>
+<body>
+  <h1>Mathematical Quiz</h1>
+  <div class="quiz-container">
+    <p id="question1">What is the sum of 20 and 35?</p>
+    <input type="text" id="answer1">
+    <button id="submit1">Submit</button>
+    <p id="result1"></p>
+
+    <p id="question2">What is the result of 42 divided by 6?</p>
+    <input type="text" id="answer2">
+    <button id="submit2">Submit</button>
+    <p id="result2"></p>
+  </div>
+
+  <script>
+    document.getElementById('submit1').addEventListener('click', function() {
+      const userAnswer1 = parseFloat(document.getElementById('answer1').value);
+      const correctAnswer1 = 20 + 35;
+      
+      if (userAnswer1 === correctAnswer1) {
+        document.getElementById('result1').textContent = 'Correct!';
+      } else {
+        document.getElementById('result1').textContent = 'Incorrect. Try again.';
+      }
+    });
+
+    document.getElementById('submit2').addEventListener('click', function() {
+      const userAnswer2 = parseFloat(document.getElementById('answer2').value);
+      const correctAnswer2 = 42 / 6;
+
+      if (userAnswer2 === correctAnswer2) {
+        document.getElementById('result2').textContent = 'Correct!';
+      } else {
+        document.getElementById('result2').textContent = 'Incorrect. Try again.';
+      }
+    });
+  </script>
+</body>
+</html>
